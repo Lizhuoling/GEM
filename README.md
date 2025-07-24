@@ -1,13 +1,14 @@
 # Train Once, Deploy Anywhere: Realize Data-Efficient Dynamic Object Manipulation
 
-[[`Paper Link`](xxx)] [[`Code Link`](xxx)] [[`Checkpoint Link`](https://huggingface.co/Zhuoling98/GEM/tree/main)]
+[[`Paper Link`](xxx)] [[`Code Link`](https://github.com/Lizhuoling/GEM.git)] [[`Checkpoint Link`](https://huggingface.co/Zhuoling98/GEM/tree/main)]
 
 This repo provides the official implementation of the paper "Train Once, Deploy Anywhere: Realize Data-Efficient Dynamic Object Manipulation".  Specifically, we provide the inference code, model checkpoint, and a dynamic object manipulation simulator built upon Isaac Gym to help readers better understand our work.
 
 ## Table of Contents:
 1. [Installation](#installation)
 2. [Data](#model)
-4. [Evaluation](#evaluation)
+3. [Inference](#inference)
+4. [Rednote](#rednote)
 5. [License](#license)
 6. [Citing](#citing)
 
@@ -51,7 +52,7 @@ $ROOT
 │   │   ├── dataset_stats.pkl
 ```
 
-## Evaluation <a name="evaluation"></a>
+## Inference <a name="inference"></a>
 
 Please first create a folder `outputs` in the folder `GEM`. The inference results will be logged in this folder. Then, you can use the script file provided in the file `$ROOT/GEM/scripts/eval.sh` to start the provided simulation environment to evaluate the checkpoint:
 ``` bash
@@ -62,6 +63,14 @@ Then, you should see the simulator running like this:
 <p align="center">
     <img src=".github/demo.png" alt="" width="100%"/>
 </p>
+
+## Rednote (小红书) <a name="rednote"></a>
+
+Welcome to follow my RedNote. I will share my latest research progress and insights not included in papers on RedNote. Contact me for collaboration is also welcomed!
+<p align="center">
+    <img src=".github/Rednote_QR_Code.png" alt="" width="30%"/>
+</p>
+
 
 ## License <a name="license"></a>
 This project is released under [CC-BY-NC 4.0](LICENSE.md).
