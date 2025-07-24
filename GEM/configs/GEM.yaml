@@ -1,0 +1,52 @@
+__BASE__: "Base.yaml"
+
+TASK_NAME: 'isaac_move_manipulation'
+MODEL_CFG_PATH: 'utils/models/model_cfg/pick_and_place_cfg.py'
+
+POLICY:
+  POLICY_NAME: "GEM"
+  BACKBONE: "sonata"
+  BACKBONE_PATH: "./pretrained/sonata.pth"
+  CHUNK_SIZE: 40
+  MEMORY_MODE: 'LSTM'  # 'RNN' or 'LSTM'
+  MEMORY_SIZE: 200
+  STATE_DIM: 8
+  MIXTURE_GAUSSIAN_NUM: 5
+  ENC_LAYERS: 1
+  DEC_LAYERS: 3
+  USE_UNCERTAINTY: True
+  UNCERTAINTY_RANGE: [-10, 10]
+  STATUS_NUM: 3
+  STATUS_PREDICT: True
+
+TRAIN:
+  NUM_ITERATIONS: 50000
+  NUM_WORKERS: 4
+  LOG_INTERVAL: 100
+  SAVE_CHECKPOINT_INTERVAL: 1000
+  BATCH_SIZE: 32
+  LR: 0.00001
+  LR_BACKBONE: 0.00000
+  DECAY_LR_ITER_STEPS: []
+  DATA_SAMPLE_MODE: 'random'
+  MAX_TOKEN_DROP_RATIO: 0.8
+
+EVAL:
+  DATA_EVAL_RATIO: 0.0
+  INFERENCE_MAX_STEPS: 3000
+  TEST_ENVI_NUM: 2
+  TEST_ENVI_BATCH_NUM: 2
+  CTRL_STEP_INTERVAL: 1
+  EXEC_CHUNK: 20
+  EXEC_INTERVAL: 1
+
+DATA:
+  DATASET_DIR: [['pick', 'datasets/isaac_base_pick/'], ['pick', 'datasets/isaac_daily_pick/']]
+  CAMERA_NAMES: ['top_camera', 'hand_camera']
+  INPUT_REPR_KEY: [[0, 5], [8, 10]] # 0-2: coors, 3: depth, 4: cls, 5-7: rgb, 8-10: normal
+  NORM_KEYS: ['action',]
+  PAST_ACTION_LEN: 1
+  PAST_ACTION_SAMPLE_INTERVAL: 1
+  REPR_LEN: 1000
+  FRANKA_XYZ_RANGE: [0.2, 0.8, -0.5, 0.5, 0.4, 0.8] # [x_min, x_max, y_min, y_max, z_min, z_max]
+  VOXEL_DOWNSAMPLE_VOXEL_SIZE: 0.01
