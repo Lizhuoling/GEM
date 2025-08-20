@@ -6,7 +6,7 @@ This repo provides the official implementation of the paper "Train Once, Deploy 
 
 ## Table of Contents:
 1. [Installation](#installation)
-2. [Data](#model)
+2. [Model](#model)
 3. [Inference](#inference)
 4. [Rednote](#rednote)
 5. [License](#license)
@@ -83,7 +83,7 @@ Please use the following BibTeX entry if you find our work useful:
 @article{li2025gem,
   title={Train Once, Deploy Anywhere: Realize Data-Efficient Dynamic Object Manipulation},
   author={Zhuoling Li, Xiaoyang Wu, Zhenhua Xu, Hengshuang Zhao},
-  journal={xxx},
+  journal={arXiv preprint arXiv:2508.14042},
   year={2025}
 }
 ```
